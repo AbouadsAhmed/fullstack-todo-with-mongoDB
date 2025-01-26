@@ -17,24 +17,20 @@ import TodoButton from "./TodoButton";
 
 export default function TodoTable({ todos }: { todos: ITodo[] }) {
   return (
-    <div className="w-full flex justify-center">
-      <Table className="w-full max-w-screen-sm sm:max-w-full mx-auto">
+    <div className="w-full">
+      <Table className="table-auto w-full">
         <TableCaption>your todolist</TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHead className="hidden sm:table-cell">ID</TableHead>
-            <TableHead>Title</TableHead>
-            <TableHead>Completed</TableHead>
-            <TableHead className="text-right">Actions</TableHead>
+            <TableHead className="w-1/2 text-left">Title</TableHead>
+            <TableHead className="w-1/4 text-left">Completed</TableHead>
+            <TableHead className="w-1/4 text-right">Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {todos.map((todo) => (
             <TableRow key={todo.id}>
-              <TableCell className="font-medium hidden sm:table-cell">
-                {todo.id}
-              </TableCell>
-              <TableCell>{todo.title}</TableCell>
+              <TableCell className="truncate">{todo.title}</TableCell>
               <TableCell>
                 {todo.completed ? (
                   <Badge>completed</Badge>
@@ -50,7 +46,7 @@ export default function TodoTable({ todos }: { todos: ITodo[] }) {
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={3}>Total</TableCell>
+            <TableCell colSpan={2}>Total</TableCell>
             <TableCell className="text-right">{todos.length}</TableCell>
           </TableRow>
         </TableFooter>
