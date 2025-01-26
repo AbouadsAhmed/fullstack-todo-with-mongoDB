@@ -17,7 +17,7 @@ import TodoButton from "./TodoButton";
 
 export default function TodoTable({ todos }: { todos: ITodo[] }) {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-x-auto">
       <Table className="table-auto w-full">
         <TableCaption>your todolist</TableCaption>
         <TableHeader>
