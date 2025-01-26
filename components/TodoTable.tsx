@@ -17,11 +17,11 @@ import TodoButton from "./TodoButton";
 
 export default function TodoTable({ todos }: { todos: ITodo[] }) {
   return (
-    <Table>
+    <Table className="w-full  mx-auto">
       <TableCaption>your todolist</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead>ID</TableHead>
+          <TableHead className="hidden sm:table-cell">ID</TableHead>
           <TableHead>Title</TableHead>
           <TableHead>Completed</TableHead>
           <TableHead className="text-right">Actions</TableHead>
@@ -30,7 +30,9 @@ export default function TodoTable({ todos }: { todos: ITodo[] }) {
       <TableBody>
         {todos.map((todo) => (
           <TableRow key={todo.id}>
-            <TableCell className="font-medium">{todo.id}</TableCell>
+            <TableCell className="font-medium hidden sm:table-cell">
+              {todo.id}
+            </TableCell>
             <TableCell>{todo.title}</TableCell>
             <TableCell>
               {todo.completed ? (
