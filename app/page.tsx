@@ -8,7 +8,7 @@ export default async function Home() {
   const todos = await getTodolistAction({ userId });
 
   return (
-    <main className="container">
+    <main className="container mx-auto p-4">
       <div className="mx-auto flex lg:w-3/4 flex-col justify-center space-y-4">
         <AddTodo userId={userId} />
         <TodoTable todos={todos} />
